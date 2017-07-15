@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#e9e9e9"
+    tools:context="com.why.project.assetsutilsdemo.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_result"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/id_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/id_img"
+            android:layout_below="@id/id_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/ic_launcher"
+            android:visibility="gone"/>
+
+        <WebView
+            android:id="@+id/id_web"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <!-- 设置区域：可滑动 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarSize="2dp"
+        android:scrollbarThumbVertical="@null"
+        android:scrollbars="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/layout_result"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <Button
+                android:id="@+id/btn_getFileNamesArray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="获取assets的指定目录中的所有文件及子目录名数组"/>
+
+            <Button
+                android:id="@+id/loadAssetsHtml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="使用webview加载assets目录下的html网页"/>
+
+            <Button
+                android:id="@+id/getStringFromAssert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="访问assets目录下的资源文件，获取文件中的字符串"/>
+
+            <Button
+                android:id="@+id/copyFolderFromAssetsToSD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="从assets目录中复制整个文件夹内容到SD卡中"/>
+
+            <Button
+                android:id="@+id/copyOneFileFromAssetsToSD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="从assets目录中复制单个文件到SD卡中"/>
+
+            <Button
+                android:id="@+id/getImageBitmapFromAssetsFile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="获取assets目录下的图片资源的bitmap对象"/>
+
+            <Button
+                android:id="@+id/getStringFromRaw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="从res中的raw文件夹中获取文件并读取数据（资源文件只能读不能写）"/>
+
+            <Button
+                android:id="@+id/writeFileToData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="写入（./data/data/包名/file）文件里面内容"/>
+
+            <Button
+                android:id="@+id/getStringFileFromData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="读取./data/data/包名/file/下面的文件内容"/>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

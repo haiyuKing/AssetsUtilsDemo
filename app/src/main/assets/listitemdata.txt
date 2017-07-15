@@ -1,0 +1,1 @@
+{"type":"assets","itemid":"001","itemtitle":"列表项001","itemdate":"2016-01-06"}
